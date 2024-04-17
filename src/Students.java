@@ -4,9 +4,7 @@ final class Student {
     private Name add;
 
     public void Students(Name add, int grade, String name) {
-
         this.add = add;
-
         this.name = name;
         this.grade = grade;
     }
@@ -28,7 +26,7 @@ final class Student {
 
     }
     public String toString() {
-        return "Student [name=\" + name + \", grade=" + grade + "]";
+        return "Student [name=" + name + ", grade=" + grade + "]";
     }
 }
 class Studenti {
