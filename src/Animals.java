@@ -4,104 +4,100 @@ class Main {
         Animal cat = new Cat();
         Animal mouse = new Mouse();
         Animal chicken;
-        chicken = new Chicken();
+//        chicken = new Chicken();
         Animal duck;
-        duck = new Duck();
+//        duck = new Duck();
 
 
         dog.walk();
         cat.talk();
         mouse.eat();
-        chicken.eat();
-        duck.walk();
+//        chicken.eat();
+//        duck.walk();
 
 
     }
+}
 
+interface Walk {
+    public void walk();
+}
 
-    interface Walk {
-        public void walk();
+interface Eat {
+    public void eat();
+}
+
+interface Talk {
+    public void talk();
+}
+
+interface Animal extends Eat, Talk, Walk {
+
+}
+
+class Dog implements Animal {
+
+    String getName() {
+        return "dog";
     }
 
-    interface Eat {
-        public void eat();
+    public void walk() {
+        System.out.println("Dog is walking");
     }
 
-    interface Talk {
-        public void talk();
-    }
-
-    abstract class Animal implements Eat, Talk, Walk {
-        abstract String getName();
-
-        public abstract void walk();
-
-        public abstract void talk();
-
-        public abstract void eat();
-
-        public String name;
-    }
-
-    static class Dog extends Animal {
-
-        String getName() {
-            return name = "dog";
-        }
-
-        public void walk() {
-            System.out.println("Dog is walking");
-        }
-
-        @Override
-        public void talk() {
-
-        }
-
-        @Override
-        public void eat() {
-
-        }
+    @Override
+    public void talk() {
 
     }
 
-
-    static abstract class Cat extends Animal {
-
-        String getName() {
-            return name = "cat";
-        }
-
-        @Override
-        public void walk() {
-
-        }
-
-        public void talk() {
-            System.out.println("Cat is talking");
-        }
-
+    @Override
+    public void eat() {
 
     }
 
-    static class Mouse extends Animal {
-
-        String getName() {
-            return name = "mouse";
-        }
-
-        public void walk() {
-            System.out.println("Mouse is eating");
-        }
+}
 
 
-            public void walk() {
-                System.out.println("Duck is walking");
-            }
+class Cat implements Animal {
 
-
-
-
-        }
+    String getName() {
+        return  "cat";
     }
+
+    @Override
+    public void walk() {
+
+    }
+
+    public void talk() {
+        System.out.println("Cat is talking");
+    }
+
+
+    @Override
+    public void eat() {
+
+    }
+}
+
+class Mouse implements Animal {
+
+    String getName() {
+        return "mouse";
+    }
+
+    public void walk() {
+        System.out.println("Mouse is eating");
+    }
+
+    @Override
+    public void talk() {
+
+    }
+
+    @Override
+    public void eat() {
+
+    }
+
 }
